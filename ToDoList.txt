@@ -1,6 +1,6 @@
-mettre sur git
 écarter diagonales
     faire un module diagonal (param : sens, avec/sans ligne droite)
+    refaire l'ordre des div .container > .left/right > .line/diagonal > div
 zone contenue 
 trouver quoi mettre (genre un cookie pcq j'ai pas de pitch xD)
 animation pour un site vivant
