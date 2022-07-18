@@ -1,6 +1,13 @@
-écarter diagonales
-    faire un module diagonal (param : sens, avec/sans ligne droite)
-    refaire l'ordre des div .container > .left/right > .line/diagonal > div
-zone contenue 
+faire les modules plus grand que visible pour corriger les ombres
+passez du css en global pour l'opti ( couleur, index, ombres)
+module BodyContent
+    param : sens  (opt : avec/sans ligne droite)
+    mettre un body au milieu pour pouvoir changer la hauteur
+    ??? haut bas pour diagonales avant après body 
+module Body 
+    align center par defaut, right et left posiible ( pour l'utiliser dans le BodyContent)
+module Content
+    graphique
+    chercher pour le texte (genre un module vide et plein de module qui se base dessus avec le texte custom)
 trouver quoi mettre (genre un cookie pcq j'ai pas de pitch xD)
-animation pour un site vivant
+animation pour un site vivant de ouf

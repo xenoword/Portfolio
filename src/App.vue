@@ -3,46 +3,46 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 // import HelloWorld from './components/HelloWorld.vue'
 import Perso from './components/Perso.vue'
-import Background from './components/Backgrounds/MainBackground.vue'
 
-import Trapeze from './components/Backgrounds/BodyDiagonal.vue';
-import BodyDiagonal from './components/Backgrounds/BodyDiagonal.vue';
+import Header from './components/Header.vue';
+import Body from './components/Body.vue';
+import BodyContent from './components/BodyContent.vue';
+undefined
 </script>
 
 <template>
-  <div id="background">
-    <Background/>
+  <div class="header">
+    <Header/>
   </div>
-  <div id="content">
-    <div id="perso">
-      <Perso/>
-    </div> 
+  <div class="body">
+    <Body/>
+    <BodyContent/>
+    <Body/>
+    <BodyContent :align="'left'"/>
+    <Body/>
   </div>
   <div id="test">
-    <!-- <Trapeze :width="'40vw'" :height="'2vw'" :color="'rgb(82,27,170)'" :IsReverse="true" :HasABorder="true"/> -->
-    <BodyDiagonal :alignX="'left'" :alignY="'bottom'"/>
+    
   </div>
     <!-- <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Hello Vue 3 + Vite" /> -->
 </template>
 
 <style>
+@-webkit-keyframes breathing { from { background-color: rgb(60, 60, 60); } to { background-color: rgb(75, 75, 75); }  }
+          @keyframes breathing { from { background-color: rgb(60, 60, 60); } to { background-color: rgb(75, 75, 75); }  }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: rgb(60, 60, 60);
+  -webkit-animation: 1.7s linear 0s infinite alternate breathing;
+          animation: 1.7s linear 0s infinite alternate breathing;
 }
-#background{
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-#content{
-  margin-top: 35vw;
-}
+
 #perso{
   display: none;
   position:absolute;

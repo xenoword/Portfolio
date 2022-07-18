@@ -3,5 +3,16 @@ html{
 }
 *{
     margin: 0;
-    padding:0;
+    padding: 0;
+}
+
+.purple {
+    background-color: rgb(82,27,170);
+}
+.gray {
+    background-color: rgb(60,60,60);
+}
+.shadow{
+    filter: drop-shadow(0 0px 10px rgb(30,30,30));
+    position: relative;
 }
