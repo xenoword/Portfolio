@@ -1,5 +1,6 @@
 <script setup>
 import Body from './Body.vue';
+import Content from './Content/Content.vue';
 </script>
 
 <script>
@@ -41,7 +42,8 @@ export default {
         </div>
 
         <div class="middle">
-            <Body :align="align"/>
+            <Body class="body" :align="align" />
+            <Content :class="'content ' + align"/>
         </div>
 
         <div class="bottom diagonal">
@@ -120,9 +122,18 @@ export default {
 /*#endregion*/
 
 /*#region middle*/
-/* .middle > div{
-    overflow: hidden;
-} */
+.middle{
+    position: relative;
+}
+.middle > .content{
+    z-index: 10;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.middle > .content.left{
+    left: 40%;
+}
 /*#endregion */
 
 /*#region align right*/

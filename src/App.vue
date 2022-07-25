@@ -30,7 +30,7 @@ undefined
 
 <style>
 @-webkit-keyframes breathing { from { background-color: rgb(60, 60, 60); } to { background-color: rgb(75, 75, 75); }  }
-          @keyframes breathing { from { background-color: rgb(60, 60, 60); } to { background-color: rgb(75, 75, 75); }  }
+        @keyframes breathing { from { background-color: rgb(60, 60, 60); } to { background-color: rgb(75, 75, 75); }  }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

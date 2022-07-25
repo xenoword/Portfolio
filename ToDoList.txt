@@ -1,13 +1,9 @@
-faire les modules plus grand que visible pour corriger les ombres
-passez du css en global pour l'opti ( couleur, index, ombres)
-module BodyContent
-    param : sens  (opt : avec/sans ligne droite)
-    mettre un body au milieu pour pouvoir changer la hauteur
-    ??? haut bas pour diagonales avant après body 
-module Body 
-    align center par defaut, right et left posiible ( pour l'utiliser dans le BodyContent)
 module Content
+    faire hauteur variable
     graphique
     chercher pour le texte (genre un module vide et plein de module qui se base dessus avec le texte custom)
+    faire des onglets avec un style similaire au nav card de bootstrap-vue
 trouver quoi mettre (genre un cookie pcq j'ai pas de pitch xD)
-animation pour un site vivant de ouf
+sommaire qui se déplace
+    précédent/suivant ou scroll pour se déplacer
+d'autres animations pour un site vivant de ouf
