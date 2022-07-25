@@ -7,7 +7,6 @@ import Perso from './components/Perso.vue'
 import Header from './components/Header.vue';
 import Body from './components/Body.vue';
 import BodyContent from './components/BodyContent.vue';
-undefined
 </script>
 
 <template>
@@ -16,10 +15,14 @@ undefined
   </div>
   <div class="body">
     <Body/>
-    <BodyContent/>
+    <BodyContent id="moi" :height="'150vw'" :content-name="'moi'"/>
     <Body/>
-    <BodyContent :align="'left'"/>
+    <BodyContent id="cookie" :align="'left'" :content-name="'cookie'"/>
     <Body/>
+    <!-- <BodyContent id="git_portfolio"/>
+    <Body/> -->
+    <!-- <BodyContent id="git_blocNote" :align="'left'"/>
+    <Body/> -->
   </div>
   <div id="test">
     

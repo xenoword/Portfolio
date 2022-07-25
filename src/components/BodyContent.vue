@@ -5,18 +5,42 @@ import Content from './Content/Content.vue';
 
 <script>
 export default {
+    data(){
+        return{
+            diagonalHeight: '30vw'
+        }
+    },
     props: {
         align: {
             type: String,
             default: 'right'
+        },
+        height:{
+            type: String,
+            default: '100vw'
+        },
+        contentName:{
+            type: String,
+            required: true
         }
+    },
+  methods: {
+    HeightvwToNumber(vwstring){
+        return vwstring.substr(0,vwstring.length - 2);
+    },
+    CalculateBodyHeight() {
+        return (this.HeightvwToNumber(this.height) - this.HeightvwToNumber(this.diagonalHeight) * 2) + 'vw';
     }
+  },
+  mounted(){
+
+  }
 }
 </script>
 
 <template>
-    <div :class="'body_content_container ' + align">
-        <div class="top diagonal">
+    <div :class="'body_content_container ' + align" :style="{'height':height}" >
+        <div class="top diagonal" :style="{'height':diagonalHeight}">
             <div class="left">
                 <div class="shadow one">
                     <div class="one purple"></div>
@@ -42,11 +66,11 @@ export default {
         </div>
 
         <div class="middle">
-            <Body class="body" :align="align" />
-            <Content :class="'content ' + align"/>
+            <Body class="body" :align="align" :height="CalculateBodyHeight()"/>
+            <Content :class="'content ' + align" :name="contentName"/>
         </div>
 
-        <div class="bottom diagonal">
+        <div class="bottom diagonal" :style="{'height':diagonalHeight}">
             <div class="left">
                 <div class="shadow one">
                     <div class="one purple"></div>
@@ -77,16 +101,13 @@ export default {
 /*#region global*/
 .body_content_container{
     min-height: 100vw;
-    height: 100vw;
+    height: 120vw;
     width: 100vw;
     position: relative;
     overflow: hidden;
 }
 .body_content_container > div{
     overflow: hidden;
-}
-.diagonal{
-    height: 30vw;
 }
 .bottom{
     transform: rotateX(180deg);

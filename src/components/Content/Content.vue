@@ -2,6 +2,38 @@
 
 </script>
 
+<script>
+export default {
+    data() {
+        return {
+        birthYear: '2002',
+        birthMounth: '10',
+        birthDay: '22'
+        }
+    },
+    props: {
+        name: {
+            type: String,
+            required: true
+        }
+    },
+    
+    methods: {
+        getAge() {
+            var today = new Date();
+            var birthDate = new Date(this.birthYear, this.birthMounth, this.birthDay);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+            {
+                age--;
+            }
+            return age;
+        }   
+    }
+}
+</script>
+
 <template>
 <div class="content_container">
     <div class="shadow one">
@@ -11,10 +43,22 @@
                     <div class="shadow three">
                         <div class="three gray">
                             <div class="module_content">
-                                <!-- text content-->
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit deserunt tempora iste sed quas ipsum delectus? Obcaecati commodi magnam magni voluptate quasi tenetur necessitatibus adipisci animi, non cumque! Voluptas aliquam at minima cupiditate alias earum nostrum tempore eius vel doloremque, numquam cum molestias, possimus veritatis repudiandae. Nostrum, consequatur. Nemo et ad saepe magnam rerum! Perferendis, aspernatur, labore ad quis libero quidem omnis error esse earum nobis quia vel voluptatem?
-                                </p>
+                                <!-- content moi-->
+                                <div v-if="name === 'moi'" class="moiContent">
+                                    <h2>Info de base</h2>
+                                    <img src="../../assets/chocobo.png" alt="une photo de moi" class="pp">
+                                    <p class="firstName">Quentin</p>
+                                    <p class="lastName">Mortier</p>
+                                    <p class="age">{{ getAge() }} ans</p>
+                                    <p class="diplome">Bac STI2D option SIN en 2020 <br> 
+                                        DUT informatique en 2022</p>
+                                        <br><br><br>
+                                    <p class="description">un petit blabla sur moi pour donner d'autres infos genre square enix ils font des truc trop bine ou alors j'aime bien coder des trucs perso qd j'ai le temps et en profiter pour approfondir mes connaissances</p>
+                                </div>
+                                <!-- content cookie-->
+                                <div v-if="name === 'cookie'" class="cookieContent">
+                                    <p>Zebi le cookie</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -75,11 +119,13 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    clip-path: polygon(0% 0%, 33% 0%, 40% 10%, 60% 10%, 67% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 33% 0%, 40% 3vw, 60% 3vw, 67% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 /*#endregion*/
 
-/*#region text*/
-
+/*#region moi*/
+.moiContent > h2{
+    
+}
 /*#endregion*/
 </style>

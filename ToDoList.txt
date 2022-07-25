@@ -1,9 +1,11 @@
 module Content
-    faire hauteur variable
-    graphique
-    chercher pour le texte (genre un module vide et plein de module qui se base dessus avec le texte custom)
-    faire des onglets avec un style similaire au nav card de bootstrap-vue
-trouver quoi mettre (genre un cookie pcq j'ai pas de pitch xD)
+    chercher pour le texte (genre un module parent vide et modules qui se base dessus/un module avec if-else)
+    si besoin faire des onglets avec un style similaire au nav card de bootstrap-vue
+trouver quoi mettre 
+    carte d'identité
+    un cookie pcq j'ai pas de pitch xD
+    des projets avec mon git
+    ? formulaire ?
 sommaire qui se déplace
     précédent/suivant ou scroll pour se déplacer
 d'autres animations pour un site vivant de ouf

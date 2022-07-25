@@ -4,13 +4,17 @@ export default{
         align: {
             type: String,
             default: 'center'
+        },
+        height:{
+            type: String,
+            default:'40vw'
         }
     }
 }
 </script>
 
 <template>
-    <div :class="'body_container '+align">
+    <div :class="'body_container '+align" :style="{'height':height}">
         <div class="left">
             <div class="shadow one">
                 <div class="one purple"></div>
@@ -39,7 +43,7 @@ export default{
 <style scoped>
 /*#region global*/
 .body_container{
-    height: 40vw;
+    /* height: 40vw; */
     width: 100vw;
     position: relative;
 
