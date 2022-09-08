@@ -1,12 +1,61 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-// import HelloWorld from './components/HelloWorld.vue'
-import Perso from './components/Perso.vue'
-
 import Header from './components/Header.vue';
 import Body from './components/Body.vue';
 import BodyContent from './components/BodyContent.vue';
+
+import MeTabOne from './components/Content/Me/TabOne.vue';
+import MeTabTwo from './components/Content/Me/TabTwo.vue';
+
+import CookieTabOne from './components/Content/Cookie/TabOne.vue';
+
+import PersonalProjectTabOne from './components/Content/PersonalProject/TabOne.vue';
+
+import Content from './js/content';
+import Tab from './js/tab';
+
+</script>
+
+<script>
+export default {
+  data() {
+        return {
+            contentArray : [
+              new Content(
+                'me',
+                [
+                  new Tab('Info de base','Info de base', MeTabOne ),
+                  new Tab('petite description','Une petite description', MeTabTwo )
+                ],
+                false,
+                '115vw'
+              ),
+              new Content(
+                'cookie',
+                [
+                  new Tab('Cookie','Cookie',CookieTabOne)
+                ],
+                false
+              ),
+              new Content(
+                'portfolio', 
+                [
+                  new Tab('description', 'Projets Personnels', PersonalProjectTabOne),
+                  new Tab('aperçu', 'Projets Personnels', PersonalProjectTabOne)
+                ],
+                true
+              ),
+              new Content(
+                'blocNote',
+                [
+                  new Tab('description', 'Projets Personnels', PersonalProjectTabOne),
+                  new Tab('aperçu', 'Projets Personnels', PersonalProjectTabOne)
+                ],
+                true
+              )
+            ]
+        }
+    }
+}
 </script>
 
 <template>
@@ -14,21 +63,15 @@ import BodyContent from './components/BodyContent.vue';
     <Header/>
   </div>
   <div class="body">
-    <Body/>
-    <BodyContent id="moi" :height="'150vw'" :content-name="'moi'"/>
-    <Body/>
-    <BodyContent id="cookie" :align="'left'" :content-name="'cookie'"/>
-    <Body/>
-    <!-- <BodyContent id="git_portfolio"/>
-    <Body/> -->
-    <!-- <BodyContent id="git_blocNote" :align="'left'"/>
-    <Body/> -->
+    <template v-for="(content,index) in contentArray">
+        <Body></Body>
+        <BodyContent :id="content.name" :align="index % 2 === 0 ? 'right' : 'left'" :height="content.height" :content="content"/>
+    </template>
+    <Body></Body>
   </div>
   <div id="test">
     
   </div>
-    <!-- <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 3 + Vite" /> -->
 </template>
 
 <style>
@@ -46,15 +89,6 @@ import BodyContent from './components/BodyContent.vue';
           animation: 1.7s linear 0s infinite alternate breathing;
 }
 
-#perso{
-  display: none;
-  position:absolute;
-  top:20vw;
-  right:15vw;
-  width:170px;
-  padding:15px;
-  z-index:99;
-}
 #test{
   display: none;
   opacity: 1;

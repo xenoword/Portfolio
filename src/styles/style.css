@@ -16,3 +16,12 @@ html{
     filter: drop-shadow(0 0px 10px rgb(30,30,30));
     position: relative;
 }
+a{
+    color: white;
+    transition: all ease 0.4s;
+    padding: 1px;
+}
+a:hover{
+    color: rgb(82,27,170);
+    background-color: white;
+}

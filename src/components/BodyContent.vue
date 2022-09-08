@@ -1,4 +1,5 @@
 <script setup>
+import PersonalProject from '../js/personalProjet';
 import Body from './Body.vue';
 import Content from './Content/Content.vue';
 </script>
@@ -19,9 +20,12 @@ export default {
             type: String,
             default: '100vw'
         },
-        contentName:{
-            type: String,
+        content:{
             required: true
+        },
+        project:{
+            type: PersonalProject,
+            required:false
         }
     },
   methods: {
@@ -67,7 +71,7 @@ export default {
 
         <div class="middle">
             <Body class="body" :align="align" :height="CalculateBodyHeight()"/>
-            <Content :class="'content ' + align" :name="contentName"/>
+            <Content :class="'content ' + align" :content="content" :project="project"/>
         </div>
 
         <div class="bottom diagonal" :style="{'height':diagonalHeight}">
